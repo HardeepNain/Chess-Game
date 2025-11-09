@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chess</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>♟️ Chess</h1>
+    <div class="panel">
+      <div class="turn" id="turn">White to move</div>
+      <!-- NEW: Undo -->
+      <button id="undo" class="btn" disabled>Undo</button>
+      <button id="newGame" class="btn">New Game</button>
+    </div>
+  </header>
+
+  <div id="err" class="err" hidden></div>
+
+  <main class="wrap">
+    <section class="board-wrap">
+      <div id="board" class="board" aria-label="Chess board" role="grid"></div>
+
+      <div class="legend left">
+        <span>8</span><span>7</span><span>6</span><span>5</span>
+        <span>4</span><span>3</span><span>2</span><span>1</span>
+      </div>
+      <div class="legend bottom">
+        <span>a</span><span>b</span><span>c</span><span>d</span>
+        <span>e</span><span>f</span><span>g</span><span>h</span>
+      </div>
+    </section>
+
+    <aside class="side">
+      <h2>Moves</h2>
+      <ol id="moves" class="moves" aria-live="polite"></ol>
+
+      <div class="captured">
+        <h3>Captured</h3>
+        <div class="cap-row">
+          <span class="cap-label">White took:</span>
+          <div id="capsByWhite" class="cap-bin" aria-label="Captured by White"></div>
+        </div>
+        <div class="cap-row">
+          <span class="cap-label">Black took:</span>
+          <div id="capsByBlack" class="cap-bin" aria-label="Captured by Black"></div>
+        </div>
+      </div>
+
+      <div class="tips">
+        <p>Click a piece to see legal moves. Click a highlighted square to move.</p>
+        <p>Castling & en passant supported; pawns auto-promote to a queen.</p>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="foot">
+    <span>Made with HTML • CSS • JS</span>
+  </footer>
+
+  <script defer src="app.js"></script>
+</body>
+</html>
